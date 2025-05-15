@@ -174,7 +174,7 @@ func main() {
 
 			// Zapiš větu do výstupu a vymaž buffer
 			if len(sentence) > 0 {
-				// Přidání nového řádku po každé větě
+				// Add a new line after each sentence
 				_, _ = b.WriteString(strings.Join(sentence, " ") + "\n")
 				sentence = []string{}
 			}
@@ -195,7 +195,7 @@ func main() {
 		fields := strings.Fields(line)
 
 		if len(fields) > 0 {
-			// Přidání každého slova do bufferu (věty)
+			// Adding each word to the buffer (sentence)
 			sentence = append(sentence, fields[0])
 		}
 	}
@@ -204,6 +204,6 @@ func main() {
 		fmt.Println("Error reading file:", err)
 	}
 
-	// Zajistí zápis všech zbývajících vět na konec souboru
+	// Ensures that all remaining sentences are written to the end of the file
 	b.Flush()
 }
