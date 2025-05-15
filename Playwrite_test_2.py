@@ -9,13 +9,13 @@ class AjkaAnalyzer:
 
     async def AjkaSegmentation(self):
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)  # nastavte False pro ladění
+            browser = await p.chromium.launch(headless=True)  # False for finetuning
             page = await browser.new_page()
 
             await page.goto("https://nlp.fi.muni.cz/projekty/wwwajka/WwwAjkaSkripty/morph.cgi?jazyk=0")
             await page.wait_for_selector('form')
 
-            await page.click('input[type="radio"][name="akce"][value="2"]')        # segmentace
+            await page.click('input[type="radio"][name="akce"][value="2"]')        # segmentation
             await page.click('input[type="radio"][name="kodovani"][value="0"]')    # ISO-8859-2
             await page.fill('input[name="slovo"]', self.process_text)
             await page.click('input[type="submit"][value="Proveď"]')
@@ -51,6 +51,6 @@ async def process_file(input_path: str, output_path: str):
 
 # Spouštěcí bod
 if __name__ == "__main__":
-    input_txt = "segmented_sample.txt"        # cesta k 4GB souboru
-    output_txt = "vystup_ajka.txt"      # výstupní soubor
+    input_txt = "segmented_sample.txt"        # csTenTen2017_sentences_not_on_seperate_lines is 4GB text file
+    output_txt = "vystup_ajka.txt"      # output file
     asyncio.run(process_file(input_txt, output_txt))
