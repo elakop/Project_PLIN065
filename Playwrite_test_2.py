@@ -49,8 +49,7 @@ async def process_file(input_path: str, output_path: str):
 
             line_number += 1
 
-# Spouštěcí bod
 if __name__ == "__main__":
     input_txt = "segmented_sample.txt"        #csTenTen2017_sentences_not_on_seperate_lines is 4GB text file
-    output_txt = "vystup_ajka.txt"      # výstupní soubor
+    output_txt = "vystup_ajka.txt"      # output file
     asyncio.run(process_file(input_txt, output_txt))
