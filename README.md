@@ -1,2 +1,2 @@
 # Project_PLIN065
-Project for Tools for theories class at Masaryk University, Brno
+Project for the Tools for theories course at Masaryk University, Brno
