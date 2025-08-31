@@ -5,3 +5,9 @@ This is tool to use web Ajka morphological analyzer to analyze Czech words into 
 
 Requierements:
   python
+  generated output from GOphraser - https://github.com/elakop/Project_PLIN065_GOphraser/tree/GO_phraser
+
+How to use the code:
+
+The file is going to have:
+  GOphraser output
